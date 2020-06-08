@@ -5,7 +5,9 @@ This is a Diary Application built using the Django framework. Entry can be added
 
 
 #FEATURES
-* Users can Add entries without Authentication.
+* Users can Add entries.
+* Users can Edit entries.
+* Users can Delete entries.
 * Responsive UI (Bootstrap4)
 
 
