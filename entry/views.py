@@ -8,7 +8,7 @@ def home(request):
 
 
 def add(request):
-    pass
+    return render(request, 'entry/add.html')
 
 def delete(request):
     pass
