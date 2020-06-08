@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <br><br><br>
+
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <button type="button" class="btn btn-danger btn-md btn-fill">
+                    <a href="" style="color: white;">New
+                    Entry
+                    </a>
+                </button>
+            </div>
+        </div>
+    </article>
+    <hr>
+    {% for post in posts %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <small class="text-muted">{{ post.timestamp }}</small>
+                <br>
+                <h2 class="class-title">{{ post.title }}</h2>
+                <p class="article-content">{{ post.content }}</p>
+                <button type="button"
+                        class="btn btn-primary btn-md btn-fill">Edit
+                </button>
+                <button type="button" class="btn btn-danger btn-md btn-fill">Delete</button>
+                </p>
+            </div>
+        </div>
+    </article>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

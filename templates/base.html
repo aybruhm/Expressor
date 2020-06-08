@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <title>Hello Diary</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+        <a href="" class="navbar-brand">Hello, Diary</a>
+    </div>
+</nav>
+
+<div class="container">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+    <script src="{% static "bootstrap/js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+</body>
+</html>

@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from .models import Entry
 
-# Create your views here.
+
+def home(request):
+    posts = Entry.objects.all().order_by('-timestamp')
+    return render(request, 'entry/home.html', {'posts': posts})
+
+
+def add(request):
+    pass
+
+def delete(request):
+    pass
