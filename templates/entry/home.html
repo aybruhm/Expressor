@@ -4,35 +4,40 @@
 <div class="container">
     <br><br><br>
 
-    <article class="media">
+    <article class="media float-right">
         <div class="media-content">
-            <div class="content">
-                <button type="button" class="btn btn-danger btn-md btn-fill">
+            <div class="container">
+                <button type="button" class="btn btn-success btn-md btn-fill">
                     <a href="{% url 'add' %}" style="color: white;">New
-                    Entry
+                        Entry
                     </a>
                 </button>
             </div>
         </div>
     </article>
+    <br><br>
+
     <hr>
     {% for post in posts %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <small class="text-muted">{{ post.timestamp }}</small>
-                <br>
-                <h2 class="class-title">{{ post.title }}</h2>
-                <p class="article-content">{{ post.content }}</p>
-                <button type="button"
-                        class="btn btn-primary btn-md btn-fill">Edit
-                </button>
-                <button type="button" class="btn btn-danger btn-md btn-fill">Delete</button>
-                </p>
+    <div class="container">
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <param class="mr-2">
+                    {{ post.author }}</param>
+                    <small class="text-muted">{{ post.timestamp }}</small>
+                    <br>
+                    <h2 class="class-title">{{ post.title }}</h2>
+                    <p class="article-content">{{ post.content }}</p>
+                    <form class="form form-inline" action="delete/{{post.id}}/" action="POST">
+                        <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>
+                    </form>
+                    <hr>
+                </div>
             </div>
-        </div>
+    </div>
     </article>
-    <hr>
-    {% endfor %}
+</div>
+{% endfor %}
 </div>
 {% endblock %}

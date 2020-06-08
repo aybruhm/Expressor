@@ -2,16 +2,20 @@
 
 {% block content %}
      <div class="container"><br><br><br>
-       <form method="POST" action="{% url 'home' %}">{% csrf_token %}
+       <form method="POST">{% csrf_token %}
+           <div class="form-group row-cols-2">
+            <input type="author" name="author" class="form-control" placeholder="Your name..">
+            <small id="authorHelpInline">Max length of characters is 100.</small>
+          </div>
           <div class="form-group row-cols-2">
             <input type="title" name="title" class="form-control" placeholder="Title..">
-            <small id="passwordHelpInline">Must be 10-100 characters long.</small>
-            <div class="valid-feedback">Looks good!</div>
+            <small id="titleHelpInline">Max length of characters is 200.</small>
           </div>
           <div class="form-group row-cols-8">
-             <textarea type="entry" name="content" class="form-control" rows="7" placeholder="Content.."></textarea>
+             <textarea name="content" class="form-control" cols="35" rows="7" placeholder="Content.."></textarea>
+              <small id="contentHelpInline">Max length of characters is 600.</small>
           </div>
-             <button type="submit" class="btn btn-danger btn-md btn-fill">Submit</button>
+             <button type="submit" class="btn btn-success btn-md btn-fill">Submit</button>
        </form>
      </div>
 {% endblock %}
