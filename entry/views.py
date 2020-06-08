@@ -29,7 +29,7 @@ def add(request):
     return render(request, 'entry/add.html')
 
 
-def delete(request, pk):
-    print(pk)
-    Entry.objects.get(id=pk).delete()
-    return HttpResponseRedirect('/')
+# def delete(request, pk):
+#     print(pk)
+#     Entry.objects.get(id=pk).delete()
+#     return HttpResponseRedirect('/')
