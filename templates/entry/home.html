@@ -29,9 +29,12 @@
                     <br>
                     <h2 class="class-title">{{ post.title }}</h2>
                     <p class="article-content">{{ post.content }}</p>
-<!--                    <form class="form form-inline" action="delete/{{post.id}}/" action="POST">-->
-<!--                        <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>-->
-<!--                    </form>-->
+                    <form class="form form-inline" action="update/{{post.id}}/" action="GET">
+                        <button type="submit" class="btn btn-primary btn-md btn-fill">Edit</button>
+                    </form>
+                    <form class="form form-inline" action="delete/{{post.id}}/" action="POST">
+                        <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>
+                    </form>
                     <hr>
                 </div>
             </div>
