@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .models import Entry
 from .forms import EntryForm
 
@@ -10,12 +10,16 @@ def home(request):
 
 def add(request):
     form = EntryForm()
+
     if request.method == 'POST':
         form = EntryForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
-    return render(request, 'entry/add.html', {'form': form})
+            return redirect('home')
+        else:
+            form = EntryForm()
+    context = {'form': form}
+    return render(request, 'entry/add.html', context)
 
 
 def delete(request, pk):

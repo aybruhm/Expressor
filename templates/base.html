@@ -14,13 +14,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <div class="container">
-                <a href="{% url 'home' %}" class="navbar-brand">Hello, Diary</a>
+                <a href="{% url 'home' %}" class="navbar-brand">Expressor</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        {% block content %}{% endblock %}
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
     </div>
 
     <script src="{% static "bootstrap/js/jquery-1.10.2.js" %}"></script>

@@ -10,5 +10,3 @@ This is a Diary Application built using the Django framework. Entry can be added
 * Users can Delete entries.
 * Responsive UI (Bootstrap4)
 
-
-PS: More features will be added in the future.
