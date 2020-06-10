@@ -1,43 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <br><br><br>
+<!--<div class="container">-->
+<br><br><br>
 
-    <article class="media float-right">
-        <div class="media-content">
-            <div class="container">
-                <button type="button" class="btn btn-success btn-md btn-fill">
-                    <a href="{% url 'add' %}" style="color: white;">New
-                        Entry
-                    </a>
-                </button>
-            </div>
+<section class="jumbotron text-center bg-light">
+    <div class="container"><br><br>
+        <h1 style="font-family: Cursive;
+                font-size: 50px;" class="jumbotron-heading">Welcome to Expressor.</h1>
+        <p class="lead text-muted">
+            Free thoughts. Free spirit. Inque.
+        </p>
+        <p>
+            <a href="{% url 'add' %}" class="btn btn-outline-success btn-md my-2">New Entry</a>
+        </p>
+    </div>
+</section>
+<br><br>
+
+<hr>
+{% for post in posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <param class="mr-2">
+            {{ post.name }}</param>
+            <small class="text-muted">{{ post.timestamp }}</small><br>
+            <h2 class="class-title">{{ post.title }}</h2>
+            <p class="article-content">{{ post.content }}</p>
+            <a href="{% url 'edit' post.id %}" class="btn btn-outline-primary btn-md">Edit</a>
+            <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-md btn-fill">Delete</a>
+            <hr>
         </div>
-    </article>
-    <br><br>
+    </div>
+</article>
+{% endfor %}
 
-    <hr>
-    {% for post in posts %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <param class="mr-2">
-                {{ post.name }}</param>
-                <small class="text-muted">{{ post.timestamp }}</small><br>
-                <h2 class="class-title">{{ post.title }}</h2>
-                <p class="article-content">{{ post.content }}</p>
-                <a href="{% url 'edit' post.id %}">
-                    <button type="submit" class="btn btn-primary btn-md btn-fill">Edit</button>
-                </a>
-                <a href="{% url 'delete' post.id %}">
-                    <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>
-                </a>
-                <hr>
-            </div>
-        </div>
-    </article>
-    {% endfor %}
-
-</div>
+<!--</div>-->
 {% endblock %}

@@ -30,10 +30,13 @@ def delete(request, pk):
 
 def update(request, pk):
     entry = Entry.objects.get(id=pk)
+    print(entry)
     form = EntryForm(instance=entry)
+    print(form)
     if request.method == 'POST':
         form = EntryForm(request.POST, instance=entry)
+        print(form)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
+            return redirect('/')
     return render(request, 'entry/update.html', {'form': form})
