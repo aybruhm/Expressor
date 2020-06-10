@@ -19,25 +19,25 @@
 
     <hr>
     {% for post in posts %}
-    <div class="container">
-        <article class="media content-section">
-            <div class="media-body">
-                <div class="article-metadata">
-                    <param class="mr-2">
-                    {{ post.author }}</param>
-                    <small class="text-muted">{{ post.timestamp }}</small>
-                    <br>
-                    <h2 class="class-title">{{ post.title }}</h2>
-                    <p class="article-content">{{ post.content }}</p>
-<!--                    <form class="form form-inline" action="delete/{{post.id}}/" action="POST">-->
-<!--                        <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>-->
-<!--                    </form>-->
-                    <hr>
-                </div>
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <param class="mr-2">
+                {{ post.name }}</param>
+                <small class="text-muted">{{ post.timestamp }}</small><br>
+                <h2 class="class-title">{{ post.title }}</h2>
+                <p class="article-content">{{ post.content }}</p>
+                <a href="{% url 'edit' post.id %}">
+                    <button type="submit" class="btn btn-primary btn-md btn-fill">Edit</button>
+                </a>
+                <a href="{% url 'delete' post.id %}">
+                    <button type="submit" class="btn btn-danger btn-md btn-fill">Delete</button>
+                </a>
+                <hr>
             </div>
-    </div>
+        </div>
     </article>
-</div>
-{% endfor %}
+    {% endfor %}
+
 </div>
 {% endblock %}

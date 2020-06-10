@@ -13,14 +13,15 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a href="{% url 'home' %}" class="navbar-brand">Hello, Diary</a>
+            <div class="container">
+                <a href="{% url 'home' %}" class="navbar-brand">Expressor</a>
+            </div>
         </div>
     </nav>
 
     <div class="container">
         <div class="container">
-            {% block content %}
-            {% endblock %}
+            {% block content %}{% endblock %}
         </div>
     </div>
 
