@@ -13,9 +13,9 @@ The interface is as shown:
 <br>
 
 #FEATURES
-* Users can Add entries.
-* Users can Edit entries.
-* Users can Delete entries.
+* User can Add entries.
+* User can Edit/Update entries.
+* User can Delete entries.
 * Responsive UI (Bootstrap4)
 
 <br>
@@ -35,7 +35,7 @@ cd Expresso/diary
 
 3. Install the requirements with the command below:
 ```
-pip install -r requirements.tx
+pip install -r requirements.txt
 ```
 
 4. Run the development server with
