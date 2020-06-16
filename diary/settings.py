@@ -25,7 +25,7 @@ SECRET_KEY = 'GSShs6xb7w38d83bd8+8&73g_++&&&3bdy='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://expressor-20.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['expressor-20.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
