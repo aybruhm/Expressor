@@ -18,25 +18,22 @@ def add(request):
             return redirect('home')
         else:
             form = EntryForm()
-    context = {'form': form}
-    return render(request, 'entry/add.html', context)
+    return render(request, 'entry/add.html', {'form': form})
 
 
 def delete(request, pk):
-    print(pk)
     Entry.objects.get(id=pk).delete()
     return HttpResponseRedirect('/')
 
 
 def update(request, pk):
     entry = Entry.objects.get(id=pk)
-    print(entry)
     form = EntryForm(instance=entry)
-    print(form)
     if request.method == 'POST':
         form = EntryForm(request.POST, instance=entry)
-        print(form)
         if form.is_valid():
             form.save()
             return redirect('/')
+        else:
+            form = EntryForm(instance=entry)
     return render(request, 'entry/update.html', {'form': form})
