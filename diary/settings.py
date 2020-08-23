@@ -79,11 +79,31 @@ WSGI_APPLICATION = 'diary.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'd1rja7f34lqn84',
+
+        'USER': 'dfhwngrndfcbtx',
+
+        'PASSWORD': '2e970fc3fbb3cd27d393fb04a95fb1496b2658bbe0a0582bb551e28dc8f87828',
+
+        'HOST': 'ec2-54-81-37-115.compute-1.amazonaws.com',
+
+        'PORT': 5432,
+
     }
+
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
